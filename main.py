@@ -36,9 +36,6 @@ async def on_command_error(ctx,error):
   elif isinstance(error, commands.MemberNotFound):
     await ctx.send('Member Not Found')
 
-  elif isinstance(error, commands.AttributeError):
-    await ctx.send("Join a Vc or Make the bot join Vc")
-
   else:
     raise error
 
