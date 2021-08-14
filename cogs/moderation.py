@@ -109,7 +109,7 @@ class Moderation(commands.Cog):
   @commands.command(help='im bored thts why u will see unusual help messages')  #unbans x user
   @commands.has_permissions(ban_members=True)
   async def unban(self, ctx, id :int):
-      user = self.bot.fetch_user(id)
+      user = await self.bot.fetch_user(id)
       await ctx.guild.unban(user)
       embed=discord.Embed(title=f'{user.mention} has been unbanned', color=discord.Colour.green())
       await ctx.send(embed=embed)
